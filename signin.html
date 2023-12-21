@@ -75,7 +75,8 @@
       width: 100%;
       margin: 80px auto 0; /* Adjusted margin for the form */
       padding: 20px;
-      background-color: #fff; /* White background */
+      background-color:transparent;
+      backdrop-filter:blur(20); /* White background */
       border: 2px solid #feaa2c; /* Yellow border color */
       border-radius: 10px; /* Rounded corners */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
@@ -124,17 +125,18 @@
     .signin-link {
       text-align: center;
       margin-top: 15px;
-      color: #2233ed;
+      color: #000;
     }
 
     .signin-link a {
-      color: #feaa2c;
+      color: black;
       text-decoration: none;
     }
 
     .signin-link a:hover {
       text-decoration: underline;
     }
+
   </style>
   <div class="bg-pic"></div>
 </head>
@@ -147,7 +149,8 @@
     <a href="signup.html" id="signin" > LOG IN</a>
   </nav>
 
-  <form>
+
+  <form onsubmit="redirectToGoogle(); return false;">
     <h2>Sign In to GuruTech</h2>
 
     <label for="username">Username:</label>
@@ -156,14 +159,19 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
 
-    <button type="submit">LOG IN</button>
+    <button type="submit" onclick="redirectToGoogle()">LOG IN</button>
 
     <div class="signin-link">
       Don't have an account? <a href="signup.html">Sign Up</a><br>
       <a href="#forgotPassword">Forgot password?</a>
     </div>
   </form>
+  <script>
+    function redirectToGoogle() {
+        window.location.href = "https://gurutech12.wordpress.com/";
+    }
+</script>
 
 </body>
 
-</html>
+</html>a
